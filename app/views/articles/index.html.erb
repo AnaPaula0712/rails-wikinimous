@@ -1,0 +1,14 @@
+<div class="container-bg">
+  <div class="container">
+    <h1 class='text-left'>Wikinimous</h1>
+    <%= link_to 'Add a new article', new_article_path, class: 'btn btn-sm btn-success mb-5' %>
+    <% @articles.each do |article| %>
+      <%= link_to article_path(article), class: 'text-decoration-none text-success' do %>
+        <div class="card text-white bg-success mb-3">
+          <h2><%= article.title %></h2>
+          <p><%= article.content %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
